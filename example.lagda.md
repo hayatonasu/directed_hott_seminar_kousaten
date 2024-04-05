@@ -1,0 +1,2 @@
+{-# OPTIONS --safe --without-K #-}
+
