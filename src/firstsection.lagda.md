@@ -7,6 +7,7 @@ open import Agda.Primitive renaming (Set to Type)
 open import example
 ```
 
+`Σ` は `\Sigma`で入力。
 
 ```agda
 data  Σ ( A : Type ) (B : A → Type) : Type where
