@@ -17,14 +17,15 @@ open import Agda.Primitive renaming (Set to Type)
 
 例えば、Identity type の定義は次のようになります。
 ```agda
-data _≅_ {A : Type} : A → A → Type where
-    refl : ∀ {x} → x ≅ x
+data _≡_ {A : Type} : A → A → Type where
+    refl : ∀ {x} → x ≡ x
 ```
-ここで、`=` はAgdaに既に定義されている等号なので、`≅` という記号を使っています。
+ここで、`=` はAgdaに既に定義されている等号なので、`≡` という記号を使っています。
 Homotopyの定義と $f∼f$ の証明は次のようになります。
+
 ```agda
 _∼_ : ∀ {A : Type} → {B : A → Type} → (f g : (x : A) → B x) → Type
-_∼_ {A} {B} f g = (x : A) → f x ≅ g x
+_∼_ {A} {B} f g = (x : A) → f x ≡ g x
 
 refl-htpy : ∀ {A : Type} {B : A → Type} {f : (x : A) → B x} → f ∼ f
 refl-htpy {A} {B} {f} = λ x → refl
